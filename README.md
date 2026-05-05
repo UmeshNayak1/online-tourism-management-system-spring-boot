@@ -257,23 +257,35 @@ Customer Login
 
 ## Screenshots
 
-Add screenshots in a `screenshots/` folder and link them here.
-
-Suggested screenshots:
-
-```text
-screenshots/landing-page.png
-screenshots/package-search.png
-screenshots/customer-dashboard.png
-screenshots/admin-dashboard.png
-screenshots/booking-approval.png
-```
-
-Example:
-
-```md
+### Landing Page:
 ![Landing Page](screenshots/landing-page.png)
-```
+
+
+### Package Searching:
+![Package
+Search](screenshots/package-search.png)
+
+### Customer Dashboard:
+![Customer
+Dashboard](screenshots/customer_dashboard.png) 
+
+### Admin Dashboard:
+![Admin
+Dashboard](screenshots/admin-dashboard.png) 
+
+### Booking Approval:
+![Booking
+Approval](screenshots/booking-approval.png)
+
+### Booking History:
+![Booking
+History](screenshots/booking_history.png)
+![Booking
+History](screenshots/booking-history1.png)
+
+
+
+
 
 ## Testing
 
@@ -294,10 +306,12 @@ The test configuration uses an H2 in-memory database, so tests do not require yo
 - Separate React frontend project
 - Cloud deployment on Render/AWS
 
-## Project Status
+## 👨‍💻 Project Author
 
-This project is ready for college demo, GitHub submission, and further feature development.
+**Umesh Nayak**
+Java Full Stack Developer\
+Portfolio: https://umeshnayak1.github.io/my-portfolio/ \
+GitHub: https://github.com/UmeshNayak1 \
+LinkedIn: https://www.linkedin.com/in/umeshlnayak/ 
 
-## License
 
-This project is for educational use.
