@@ -1,0 +1,49 @@
+package com.tourism.controller;
+
+import com.tourism.model.TourPackage;
+import com.tourism.service.CatalogService;
+import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/packages")
+public class PackageController {
+    private final CatalogService catalogService;
+
+    public PackageController(CatalogService catalogService) {
+        this.catalogService = catalogService;
+    }
+
+    @GetMapping
+    public List<TourPackage> all() {
+        return catalogService.packages();
+    }
+
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    public TourPackage create(@Valid @RequestBody TourPackage tourPackage) {
+        return catalogService.savePackage(tourPackage);
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public TourPackage update(@PathVariable Long id, @RequestBody TourPackage tourPackage) {
+        return catalogService.updatePackage(id, tourPackage);
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public void delete(@PathVariable Long id) {
+        catalogService.deletePackage(id);
+    }
+}
